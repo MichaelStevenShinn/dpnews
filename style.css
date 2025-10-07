@@ -1,0 +1,187 @@
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+}
+
+h2, p { margin: 0; padding: 0; }
+
+.top-spacing { height: 12vh; }
+
+/* ---------- HEADER ---------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2vh 0;
+  background: #111;
+  color: #fff;
+  font-size: 4vh;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  z-index: 1000;
+  transition: transform 0.1s ease-in-out;
+}
+
+header.hidden { transform: translateY(-100%); }
+
+/* ---------- VIDEOS ---------- */
+.videos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12vh;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 5vh;
+  position: relative;
+  z-index: 1;
+}
+
+.video-card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- BACKGROUND VIDEO ---------- */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 2%;
+  width: 93%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 20px;
+  opacity: 1;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.video-card:nth-child(odd) .video-bg video {
+  object-position: right center;
+}
+
+.video-card:nth-child(even) .video-bg video {
+  object-position: left center;
+}
+
+/* ---------- RECTANGLE CONTENT BOX ---------- */
+.video-content {
+  position: relative;
+  z-index: 3;
+  background-color: rgba(74, 74, 74, 0.95);
+  border-radius: 20px;
+  padding: 3%;
+  width: 45%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+/* Feather all around the content div */
+.video-content::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 28px;
+  background: radial-gradient(circle, rgba(0,0,0,0.15) 0%, transparent 80%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Left/right alignment flush with MP4 */
+.video-card:nth-child(odd) .video-content {
+  margin-left: 2%;
+  margin-right: auto;
+  align-self: flex-start;
+}
+
+.video-card:nth-child(even) .video-content {
+  margin-right: 2%;
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+/* ---------- TEXT ---------- */
+.video-title {
+  font-size: 4vh;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 1vh;
+  text-align: center;
+}
+
+.video-description {
+  font-size: 2.2vh;
+  color: #bfbfbf;
+  margin-bottom: 2vh;
+  text-align: center;
+}
+
+/* ---------- VIDEO WRAPPER ---------- */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  opacity: 1;
+}
+
+/* ---------- MOBILE ADJUSTMENTS ---------- */
+@media (max-width: 768px) {
+  /* hide background videos entirely */
+  .video-bg {
+    display: none;
+  }
+
+  /* make content full width and centered */
+  .video-card {
+    justify-content: center;
+  }
+
+  .video-content {
+    width: 90%;
+    margin: 0 auto;
+    align-self: center;
+    border-radius: 15px;
+  }
+
+  /* remove left/right flush margins */
+  .video-card:nth-child(odd) .video-content,
+  .video-card:nth-child(even) .video-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
