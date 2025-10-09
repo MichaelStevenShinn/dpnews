@@ -10,7 +10,7 @@ body {
 
 h2, p { margin: 0; padding: 0; }
 
-.top-spacing { height: 12vh; }
+.top-spacing { height: 30vh; } /* total header height */
 
 /* ---------- HEADER ---------- */
 header {
@@ -18,18 +18,77 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2vh 0;
-  background: #111;
-  color: #fff;
-  font-size: 4vh;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-align: center;
   z-index: 1000;
-  transition: transform 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
-header.hidden { transform: translateY(-100%); }
+/* Top half title - fades on scroll */
+.header-top {
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4vh;
+  font-weight: 600;
+  background: #111;
+  color: #fff;
+  opacity: 1;
+  visibility: visible;
+}
+
+.header-top.fade-out {
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.header-top.fade-in {
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+/* Hidden state: fade out */
+.header-top.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* Bottom half nav links - always sticky, background fades */
+.header-bottom {
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3vw;
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  padding-bottom: 1vh;
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+  transform: translateY(0);
+}
+
+.header-bottom.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.header-bottom a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2.5vh;
+  padding: 0.5vh 1vw;
+  border-radius: 6px;
+}
+
+.header-bottom a:hover {
+  background: #222;
+}
+
+.header-bottom.go-top {
+  transform: translateY(-12vh); 
+}
+
 
 /* ---------- VIDEOS ---------- */
 .videos-container {
@@ -95,7 +154,6 @@ header.hidden { transform: translateY(-100%); }
   opacity: 1;
 }
 
-/* Feather all around the content div */
 .video-content::before {
   content: "";
   position: absolute;
@@ -161,15 +219,13 @@ header.hidden { transform: translateY(-100%); }
 
 /* ---------- MOBILE ADJUSTMENTS ---------- */
 @media (max-width: 768px) {
-  /* hide background videos entirely */
-  .video-bg {
-    display: none;
+  .video-bg { display: none; }
+  .video-card { justify-content: center; }
+  .header-bottom.go-top {
+    transform: translateY(-77px); 
   }
 
-  /* make content full width and centered */
-  .video-card {
-    justify-content: center;
-  }
+  .top-spacing { height: 32vh; } /* total header height */
 
   .video-content {
     width: 90%;
@@ -185,3 +241,5 @@ header.hidden { transform: translateY(-100%); }
     margin-right: 0;
   }
 }
+
+

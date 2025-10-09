@@ -7,21 +7,28 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header id="main-header">Michael Shinn's Videos</header>
+  <header id="main-header">
+    <div class="header-top">
+      Michael Shinn's Videos
+    </div>
+    <nav class="header-bottom">
+      <a href="#long">Long</a>
+      <a href="#recap">Recap</a>
+      <a href="#hype">Hype</a>
+    </nav>
+  </header>
+
   <div class="top-spacing"></div>
 
-  <section class="videos-container">
-
+  <!-- ---------- LONG SECTION ---------- -->
+  <section class="videos-container" id="long">
     <div class="video-card">
       <div class="video-bg">
-        <video autoplay muted loop playsinline src="mov"></video>
+        <video autoplay muted loop playsinline src="bg1.mp4"></video>
       </div>
-
       <div class="video-content">
         <h2 class="video-title">Dos Pueblos Cross Country</h2>
-        <p class="video-description">
-          UCSB's annual Cross Country invitational brought together 19 teams from across California, where DP runners describe their experience in the races, and DP sophomore Emily Joulie-mares explains her win in the Girls 1.4-mile race after an injury in the Spring.
-        </p>
+        <p class="video-description">UCSB's annual Cross Country invitational brought together 19 teams from across California, where DP runners describe their experience in the races, and DP sophomore Emily Joulie-mares explains her win in the Girls 1.4-mile race after an injury in the Spring.</p>
         <div class="video-wrapper">
           <iframe src="https://www.youtube.com/embed/pKyCGRamUPc" allowfullscreen></iframe>
         </div>
@@ -30,14 +37,27 @@
 
     <div class="video-card">
       <div class="video-bg">
-        <video autoplay muted loop playsinline src="mov"></video>
+        <video autoplay muted loop playsinline src="bg2.mov"></video>
       </div>
-
       <div class="video-content">
         <h2 class="video-title">Event Title Two</h2>
-        <p class="video-description">
-          Description for the second event.
-        </p>
+        <p class="video-description">Description for the second event.</p>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- RECAP SECTION ---------- -->
+  <section class="videos-container" id="recap">
+    <div class="video-card">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline src="bg2.mov"></video>
+      </div>
+      <div class="video-content">
+        <h2 class="video-title">Event Title Two</h2>
+        <p class="video-description">Description for the second event.</p>
         <div class="video-wrapper">
           <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
         </div>
@@ -46,21 +66,47 @@
 
     <div class="video-card">
       <div class="video-bg">
-        <video autoplay muted loop playsinline src="mov"></video>
+        <video autoplay muted loop playsinline src="bg1.mp4"></video>
       </div>
+      <div class="video-content">
+        <h2 class="video-title">Dos Pueblos Cross Country</h2>
+        <p class="video-description">UCSB's annual Cross Country invitational brought together 19 teams from across California...</p>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/pKyCGRamUPc" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ---------- HYPE SECTION ---------- -->
+  <section class="videos-container" id="hype">
+    <div class="video-card">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline src="bg1.mp4"></video>
+      </div>
       <div class="video-content">
         <h2 class="video-title">Event Title Three</h2>
-        <p class="video-description">
-          Description for the third event.
-        </p>
+        <p class="video-description">Description for the third event.</p>
         <div class="video-wrapper">
           <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
+    <div class="video-card">
+      <div class="video-bg">
+        <video autoplay muted loop playsinline src="bg2.mov"></video>
+      </div>
+      <div class="video-content">
+        <h2 class="video-title">Dos Pueblos Cross Country</h2>
+        <p class="video-description">UCSB's annual Cross Country invitational brought together 19 teams from across California...</p>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/pKyCGRamUPc" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
   </section>
+
   <script src="script.js"></script>
 </body>
 </html>
