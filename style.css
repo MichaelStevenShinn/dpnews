@@ -145,7 +145,7 @@ header {
   border-radius: 20px;
   padding: 3%;
   width: 45%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -204,7 +204,7 @@ header {
   border-radius: 15px;
   overflow: hidden;
   background: #000;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.055);
 }
 
 .video-wrapper iframe {
@@ -330,7 +330,7 @@ h2 {
     padding-bottom: 5vh;
     position: relative;
     z-index: 1;
-    background-color: rgba(150, 255, 145, 0.02);
+    background-color: rgb(33, 33, 33);
   }
 
   .videos-container-recap {
@@ -342,7 +342,7 @@ h2 {
     padding-bottom: 5vh;
     position: relative;
     z-index: 1;
-    background-color: rgba(111, 0, 255, 0.02);
+    background-color: rgba(111, 0, 255, 0.05);
   }
 
   .videos-container-hype {
@@ -354,7 +354,7 @@ h2 {
     padding-bottom: 5vh;
     position: relative;
     z-index: 1;
-    background-color: rgba(255, 8, 0, 0.02);
+    background-color: rgba(255, 8, 0, 0.05);
   }
 
   .videos-container-counselors_corner {
@@ -366,7 +366,7 @@ h2 {
     padding-bottom: 5vh;
     position: relative;
     z-index: 1;
-    background-color: rgba(0, 104, 73, 0.02);
+    background-color: rgba(0, 104, 73, 0.05);
   }
 
   .videos-container-2 {
@@ -378,7 +378,7 @@ h2 {
     padding-bottom: 5vh;
     position: relative;
     z-index: 1;
-    background-color: rgba(255, 0, 89, 0.02);
+    background-color: rgba(255, 0, 89, 0.05);
   }
 /* 
   .videos-container-weekly {
@@ -424,29 +424,24 @@ h2 {
 
 
 
-  .feather-body-long {
-    height: 30px;
-    background: linear-gradient(to bottom, rgb(33, 33, 33), rgba(150, 255, 145, 0.02));
-  }
-
   .feather-long-recap {
     height: 30px;
-    background: linear-gradient(to bottom, rgba(150, 255, 145, 0.02), rgba(111, 0, 255, 0.02));
+    background: linear-gradient(to bottom, rgb(33, 33, 33), rgba(111, 0, 255, 0.05));
   }
   
   .feather-recap-hype {
     height: 30px;
-    background: linear-gradient(to bottom, rgba(111, 0, 255, 0.02), rgba(255, 8, 0, 0.02));
+    background: linear-gradient(to bottom, rgba(111, 0, 255, 0.05), rgba(255, 8, 0, 0.05));
   }
   
   .feather-hype-counselors_corner {
     height: 30px;
-    background: linear-gradient(to bottom, rgba(255, 8, 0, 0.02), rgba(0, 104, 73, 0.02));
+    background: linear-gradient(to bottom, rgba(255, 8, 0, 0.05), rgba(0, 104, 73, 0.05));
   }
   
   .feather-counselors_corner-2 {
     height: 30px;
-    background: linear-gradient(to bottom, rgba(0, 104, 73, 0.02), rgba(255, 0, 89, 0.02));
+    background: linear-gradient(to bottom, rgba(0, 104, 73, 0.05), rgba(255, 0, 89, 0.05));
   }
   
   /* .feather-hype-weekly {
@@ -475,19 +470,36 @@ h2 {
   .dropdown {
     position: relative;
     display: inline-block;
-    color: #ffffff;
   }
-  
-  /* The button */
-  .dropdown-button {
-    background: none;
-    border: none;
-    color: inherit;
-    font: inherit;
-    cursor: pointer;
-    padding: 0.5em 1em;
+
+  .dropdown,
+.dropdown-content {
+  background-clip: padding-box; /* prevents bleed from rounded corners */
+}
+
+
+.dropdown-button {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2.5vh;
+  padding: 0.5vh 1vw;
+  border-radius: 6px;
+  background-color: #111;
+  border: none;                 /* removes native button border */
+  outline: none;                /* removes focus border */
+  box-shadow: none;             /* removes subtle inset highlight */
+  appearance: none;             /* removes OS styling */
+  -webkit-appearance: none;
+  padding-right: 6px;
+}
+
+
+  .dropdown-button:hover {
+    background: #222;
     color: #ffffff;
+    display: block;
   }
+
   
   /* Dropdown content (initially hidden) */
   .dropdown-content {
@@ -495,21 +507,17 @@ h2 {
     position: absolute;
     top: 100%; /* appear below the button */
     left: 0;
-    background-color: white;
     min-width: 160px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     z-index: 999;
     color: #ffffff;
-    background: rgb(117, 117, 117);
-    
   }
-  
-  /* Show on hover (optional for desktop) */
+
   .dropdown:hover .dropdown-content {
-    background: rgb(69, 69, 69);
-    color: #ffffff;
     display: block;
   }
+  
+    
   
   /* Dropdown links */
   .dropdown-content a {
@@ -523,5 +531,4 @@ h2 {
   
   .dropdown-content a:hover {
     background-color: #f0f0f0;
-    background: rgba(33,33,33);
   }
